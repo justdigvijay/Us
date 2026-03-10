@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+<div class="container">
+
+<div class="tenor-gif-embed"
+data-postid="15195810"
+data-share-method="host"
+data-width="100%">
+</div>
+
+<script async src="https://tenor.com/embed.js"></script>
+
+<h1>Ek aur baar Soch lo! 😣</h1>
+<p>kyu aisa kar rahe ho plzzz maan jao😣</p>
+
+<div class="btn">
+
+<a href="game.html">Yes</a>
+<a href="no3.html">No</a>
+
+</div>
+
+</div>
+<script>
+
+const music = document.getElementById("bgMusic");
+
+// restore saved position
+const savedTime = localStorage.getItem("musicTime");
+
+if(savedTime){
+    music.currentTime = savedTime;
+}
+
+// start music on first click anywhere
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+// keep saving playback time
+setInterval(()=>{
+    localStorage.setItem("musicTime", music.currentTime);
+},1000);
+
+</script>
+</body>
+</html>

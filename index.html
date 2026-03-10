@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposed Her</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+<div class="container">
+
+<div class="tenor-gif-embed"
+data-postid="22885016"
+data-share-method="host"
+data-aspect-ratio="1.04918"
+data-width="100%">
+<a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a>
+</div>
+
+<script async src="https://tenor.com/embed.js"></script>
+
+<h1>Do you love me baby? 🤗</h1>
+<p>Bcoz Digvijay is all yours!!</p>
+
+<div class="btn">
+
+<a href="game.html">Yes</a>
+<a href="no1.html">No</a>
+
+</div>
+
+</div>
+<script>
+
+const music = document.getElementById("bgMusic");
+
+// restore saved position
+const savedTime = localStorage.getItem("musicTime");
+
+if(savedTime){
+    music.currentTime = savedTime;
+}
+
+// start music on first click anywhere
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+// keep saving playback time
+setInterval(()=>{
+    localStorage.setItem("musicTime", music.currentTime);
+},1000);
+
+</script>
+</body>
+</html>

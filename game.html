@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Find My Heart</title>
+
+<link rel="stylesheet" href="css/game.css">
+
+</head>
+
+<body>
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+
+<div class="floating-hearts"></div>
+
+<div id="game-stage">
+
+<h1>Find My Heart ❤️</h1>
+
+<p>I hid 3 hearts. Find them!</p>
+
+<div class="score">
+Hearts Found: <span id="counter">0</span>/3
+</div>
+
+<div class="hiding-spots"></div>
+
+</div>
+
+<div id="letter">
+
+<h1>For You Jaan💖</h1>
+
+<div class="love-message">
+
+<p>
+Sometimes I sit quietly and think about how my life looked before you walked into it… and it feels strange, like a sky without stars. Everything was normal, everything was fine, but it was never this beautiful. You came into my world so gently, yet you changed everything so deeply. The way you care, the way you love, the way you exist in my life makes me feel like the luckiest man alive.
+</p>
+
+<p>
+You are not just someone I love… you are the peace my heart was searching for without even knowing it. In your smile I find comfort, in your voice I find calm, and in your presence I find a home I never want to leave. There are a thousand beautiful people in this world, but none of them are you, and that is why my heart chose you again and again, every single day.
+</p>
+
+<p>
+I promise you something from the deepest corner of my soul… no matter how life changes, no matter what storms come, I will always stand beside you with the same love, the same respect, and the same loyalty. Because loving you is not just a feeling for me, it has become the most beautiful part of my existence.
+</p>
+
+<p>
+And if I could choose my life all over again, in every universe, in every lifetime… I would still find you, hold your hand, and fall in love with you all over again. ❤️
+</p>
+
+</div>
+
+<img src="assets/photo.jpg" class="love-photo">
+
+</div>
+
+<script src="js/game.js"></script>
+<script>
+
+const music = document.getElementById("bgMusic");
+
+// restore saved position
+const savedTime = localStorage.getItem("musicTime");
+
+if(savedTime){
+    music.currentTime = savedTime;
+}
+
+// start music on first click anywhere
+document.addEventListener("click", () => {
+    music.play();
+}, { once:true });
+
+// keep saving playback time
+setInterval(()=>{
+    localStorage.setItem("musicTime", music.currentTime);
+},1000);
+
+</script>
+</body>
+</html>
